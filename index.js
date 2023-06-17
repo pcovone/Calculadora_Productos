@@ -1,5 +1,4 @@
-let cestaProductos = [];
-let arrayProductos = [];
+const cestaProductos = [];
 const salir = 3;
 
 class Producto {
@@ -11,57 +10,52 @@ class Producto {
   }
 }
 
-function crearProducto(id, nombre, precio, categoria) {
-  const producto = new Producto(id, nombre, precio, categoria);
-  arrayProductos.push(producto);
-}
-
-// Productos a vender
-crearProducto(1, "Viola 16 pulgadas", 650, "instrumentos");
-crearProducto(2, "Violin 4/4", 500, "instrumentos");
-crearProducto(
-  3,
-  "RockJam Kit de piano de teclado con pantalla táctil",
-  300,
-  "instrumentos"
-);
-crearProducto(
-  4,
-  "D Z Strad - Viola de 15,5 pulgadas hecha a mano",
-  1500,
-  "instrumentos"
-);
-crearProducto(
-  5,
-  "Sabomenia Violin Dreamer D10 hecho a mano",
-  299,
-  "instrumentos"
-);
-crearProducto(
-  6,
-  "Starument Piano de teclado eléctrico prémium",
-  149,
-  "instrumentos"
-);
-crearProducto(7, "D'Addario Kaplan Premium Rosin", 8, "accesorios");
-crearProducto(
-  8,
-  "Bernardel Original – Colofonia para violín y viola",
-  12,
-  "accesorios"
-);
+const arrayProductos = [
+  new Producto(1, "Viola 16 pulgadas", 650, "instrumentos"),
+  new Producto(2, "Violin 4/4", 500, "instrumentos"),
+  new Producto(
+    3,
+    "RockJam Kit de piano de teclado con pantalla táctil",
+    300,
+    "instrumentos"
+  ),
+  new Producto(
+    4,
+    "D Z Strad - Viola de 15,5 pulgadas hecha a mano",
+    1500,
+    "instrumentos"
+  ),
+  new Producto(
+    5,
+    "Sabomenia Violin Dreamer D10 hecho a mano",
+    299,
+    "instrumentos"
+  ),
+  new Producto(
+    6,
+    "Starument Piano de teclado eléctrico prémium",
+    149,
+    "instrumentos"
+  ),
+  new Producto(7, "D'Addario Kaplan Premium Rosin", 8, "accesorios"),
+  new Producto(
+    8,
+    "Bernardel Original – Colofonia para violín y viola",
+    12,
+    "accesorios"
+  ),
+];
 
 const mostrarPorCategoria = (categoria) => {
   const filtrado = arrayProductos.filter((el) => el.categoria === categoria);
-  let mensajeAMostrar = "";
-  filtrado.forEach((el) => {
-    mensajeAMostrar += `ID: ${el.id} \nProducto: ${el.nombre} \nPrecio: ${el.precio} \n`;
-  });
+  let mensajeAMostrar = filtrado
+    .map(
+      (el) => `ID: ${el.id} \nProducto: ${el.nombre} \nPrecio: ${el.precio} \n`
+    )
+    .join("");
   const id = parseInt(
     prompt(
-      mensajeAMostrar +
-        "\n" +
-        "Ingrese el ID del producto para agregar al carrito"
+      `${mensajeAMostrar}\nIngrese el ID del producto para agregar al carrito`
     )
   );
   const productoEncontrado = arrayProductos.find((el) => el.id === id);
@@ -83,7 +77,6 @@ const verProducto = () => {
       case 2:
         mostrarPorCategoria("accesorios");
         break;
-
       default:
         alert("Has ingresado una opción inválida.");
     }
@@ -97,14 +90,16 @@ const verProducto = () => {
 
 const verCarrito = () => {
   let mensajeAMostrar = "Lista de productos: \n";
-  cestaProductos.forEach((el) => {
-    mensajeAMostrar += `ID: ${el.id} \nProducto: ${el.nombre} \nPrecio: ${el.precio} \n`;
-  });
+  mensajeAMostrar += cestaProductos
+    .map(
+      (el) => `ID: ${el.id} \nProducto: ${el.nombre} \nPrecio: ${el.precio} \n`
+    )
+    .join("");
   const total = cestaProductos.reduce(
     (acumulador, elemento) => acumulador + elemento.precio,
     0
   );
-  mensajeAMostrar += "El total de los productos añadidos es: " + total;
+  mensajeAMostrar += `El total de los productos añadidos es: ${total}`;
   alert(mensajeAMostrar);
 };
 
