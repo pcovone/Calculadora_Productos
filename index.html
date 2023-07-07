@@ -1,15 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Tempo Treasure</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <h1 class="nav__title">Tempo Treasure</h1>
+        <img src="./recursos/viola.png" alt="viola icon" />
+      </div>
+      <div class="search">
+        <input type="text" class="search__input" placeholder="Type your text" />
+        <button class="search__button">
+          <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
+            <g>
+              <path
+                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+              ></path>
+            </g>
+          </svg>
+        </button>
+        <div class="header__cart">
+          <div class="header__cart--notification">0</div>
+          <img
+            src="./recursos/shopping-cart.png"
+            alt="carrito"
+            class="carrito"
+          />
+        </div>
+      </div>
+    </nav>
+    <main>
+      <header>
+        <div class="header__principal-text">
+          <h2>Let's make some <strong class="bold-text">music</strong></h2>
+          <button class="button">Click here to see our products</button>
+        </div>
+      </header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+      <!-- Detalles del artículo inicial -->
 
-<body>
+      <section class="card">
+        <article class="card__img"></article>
+        <article class="card__title">
+          RockJam Kit de piano de teclado con pantalla táctil
+          <div class="card__description">
+            <p>
+              El kit de piano de teclado RockJam 761 incluye un teclado digital
+              con 61 teclas de tamaño completo mientras mantiene un diseño
+              portátil y compacto que puede ser alimentado por red eléctrica
+              (fuente de alimentación incluida) o baterías
+            </p>
+          </div>
+          <div class="card__price">$4.99</div>
+          <div class="card__product-quantity">
+            <div class="input">
+              <img
+                class="input__minus"
+                src="./recursos/icon-minus.svg"
+                alt="minus"
+              />
+              <input class="input__number" type="number" value="0" />
+              <img
+                class="input__plus"
+                src="./recursos/icon-plus.svg"
+                alt="plus"
+              />
+            </div>
+          </div>
+          <div class="cart__button">
+            <button>
+              Añadir al carrito
+              <img src="./recursos/shopping-cart.png" alt="carrito" />
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <!-- cart modal -->
+
+      <div class="cart-modal">
+        <p class="cart-modal__title">Carrito</p>
+        <div class="cart-modal__checkout-container">
+          <div class="cart-modal__details-container">
+            <img src="./recursos/piano.jpg" alt="piano" />
+            <div>
+              <p class="cart-modal__product">RockJam kit de piano...</p>
+              <p class="cart-modal__price">$4.99 x 3 <span>$14.97</span></p>
+            </div>
+            <div class="cart-modal__delete-img">
+              <img
+                class="cart-modal__delete-icon"
+                src="./recursos/icon-delete.svg"
+                alt="delete"
+              />
+            </div>
+          </div>
+          <button class="cart-modal__checkout">Checkout</button>
+        </div>
+      </div>
+    </main>
+    <!-- final close modal -->
     <script src="./index.js"></script>
-</body>
-
+  </body>
 </html>
