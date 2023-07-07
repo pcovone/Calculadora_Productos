@@ -419,8 +419,8 @@ header h2 {
   font-weight: 700;
 }
 
-.cart-modal__delete-img,
-.cart-modal__delete {
+.cart-modal__delete,
+.cart-modal__checkout {
   cursor: pointer;
 }
 
@@ -437,4 +437,10 @@ header h2 {
 
 .show {
   display: block;
+}
+
+.cart-empty {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 700;
 }

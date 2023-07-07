@@ -31,6 +31,7 @@ addToCartBtn.addEventListener("click", () => {
 
   cartNotification.innerText = lastValue;
   cartNotification.style.display = "block";
+  drawProductInModal();
   priceModal.innerHTML = `$4.99 x ${lastValue} <span>$${
     lastValue * 4.99
   }</span>`;
@@ -39,17 +40,54 @@ addToCartBtn.addEventListener("click", () => {
 //Mostrar el modal con el detalle del carrito
 const cartIconBtn = document.querySelector(".header__cart");
 const cartModal = document.querySelector(".cart-modal");
-let priceModal = document.querySelector(".cart-modal__price");
-
-cartIconBtn.addEventListener("click", () => {
-  cartModal.classList.toggle("show");
-});
-
-const deleteProduct = document.querySelector(".cart-modal__delete-icon");
+// let priceModal = document.querySelector(".cart-modal__price");
 const productContainer = document.querySelector(
   ".cart-modal__checkout-container"
 );
+
+cartIconBtn.addEventListener("click", () => {
+  cartModal.classList.toggle("show");
+  if (lastValue == 0) {
+    drawProductInModal();
+  }
+});
+
 //Borrar contenido del carrito
+function deleteProduct() {
+  const deleteProductBtn = document.querySelector(".cart-modal__delete");
+
+  deleteProductBtn.addEventListener("click", () => {
+    productContainer.innerHTML =
+      '<p class="cart-empty">Tu carrito está vacío</p>';
+    lastValue = 0;
+    cartNotification.innerText = lastValue;
+  });
+}
+
+//FUNCIONES
+function drawProductInModal() {
+  productContainer.innerHTML = `<div class="cart-modal__details-container">
+  <img src="./recursos/piano.jpg" alt="piano" />
+  <div>
+    <p class="cart-modal__product">RockJam kit de piano...</p>
+    <p class="cart-modal__price">$4.99 x 3 <span>$14.97</span></p>
+  </div>
+  <div class="cart-modal__delete-img">
+    <img
+      class="cart-modal__delete"
+      src="./recursos/icon-delete.svg"
+      alt="delete"
+    />
+  </div>
+</div>
+<button class="cart-modal__checkout">Checkout</button>
+`;
+  deleteProduct();
+  let priceModal = document.querySelector(".cart-modal__price");
+  priceModal.innerHTML = `$4.99 x ${lastValue} <span>$${
+    lastValue * 4.99
+  }</span>`;
+}
 
 // const cestaProductos = [];
 // const salir = 3;
