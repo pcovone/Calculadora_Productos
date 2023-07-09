@@ -1,3 +1,144 @@
+// class Producto {
+//   constructor(id, nombre, precio, descripcion, categoria) {
+//     this.id = id;
+//     this.nombre = nombre;
+//     this.descripcion = descripcion;
+//     this.precio = precio;
+//     this.categoria = categoria;
+//   }
+// }
+
+// const arrayProductos = [
+//   new Producto(
+//     1,
+//     "Viola 16 pulgadas",
+//     "Accesorios de ébano, diapasón de ébano, abeto sólido tallado a mano y cuerpo de arce sólido, construcción ligera que significa mano de obra de calidad",
+//     650,
+//     "instrumentos"
+//   ),
+
+//   new Producto(
+//     2,
+//     "Violin 4/4",
+//     "Violín de madera maciza: cuello de arce y tableros de arce, paneles de madera de abeto y ébano. Está cortado de una pieza completa de madera con timbre limpio y sonido estable",
+//     500,
+//     "instrumentos"
+//   ),
+
+//   new Producto(
+//     3,
+
+//     "RockJam Kit de piano de teclado con pantalla táctil",
+
+//     "El kit de piano de teclado RockJam 761 incluye un teclado digital con 61 teclas de tamaño completo mientras mantiene un diseño portátil y compacto que puede ser alimentado por red eléctrica (fuente de alimentación incluida) o baterías",
+
+//     300,
+
+//     "instrumentos"
+//   ),
+
+//   new Producto(
+//     4,
+
+//     "D Z Strad - Viola de 15,5 pulgadas hecha a mano",
+//     "Configurado por nuestros luthiers con un puente de arce roca y cuerdas Helicore.",
+
+//     1500,
+
+//     "instrumentos"
+//   ),
+
+//   new Producto(
+//     5,
+
+//     "Sabomenia Violin Dreamer D10 hecho a mano",
+//     "Barniz para violín de alta calidad: el violín está totalmente hecho a mano, la capa de laca es transparente, el grano de madera es claramente visible y el sonido es transparente",
+
+//     299,
+
+//     "instrumentos"
+//   ),
+
+//   new Producto(
+//     6,
+
+//     "Starument Piano de teclado eléctrico prémium",
+//     "Disfruta de las ricas melodías con el juego de teclado electrónico Starument con altavoces duales de gama completa de alta calidad",
+
+//     149,
+
+//     "instrumentos"
+//   ),
+
+//   new Producto(
+//     7,
+//     "D'Addario Kaplan Premium Rosin",
+//     "La colofonia oscura Kaplan Premium está empaquetada en una atractiva funda, diseñada para un uso fácil con una sola mano.",
+//     8,
+//     "accesorios"
+//   ),
+
+//   new Producto(
+//     8,
+
+//     "Bernardel Original",
+//     "Para violín, viola y violonchelo",
+
+//     12,
+
+//     "accesorios"
+//   ),
+// ];
+
+// let carrito = [];
+
+// let contenedor = document.querySelector("#contenedor");
+
+// arrayProductos.forEach((el, index) => {
+//   const section = document.createElement("section");
+//   section.classList.add("card");
+//   section.id = "producto" + (index + 1);
+
+//   const article = `<article class="card__img"></article>
+//   <article class="card__title">
+//     ${el.nombre}
+//     <div class="card__description">
+//       <p>
+//         ${el.precio}
+//       </p>
+//     </div>
+//     <div class="card__price">$${el.descripcion}</div>
+//     <div class="card__product-quantity">
+//       <div class="input">
+//         <img
+//           class="input__minus"
+//           src="./recursos/icon-minus.svg"
+//           alt="minus"
+//         />
+//         <input class="input__number" type="number" value="0" />
+//         <img
+//           class="input__plus"
+//           src="./recursos/icon-plus.svg"
+//           alt="plus"
+//         />
+//       </div>
+//     </div>
+//         </article>`;
+//   section.innerHTML = article;
+//   const div = document.createElement("div");
+//   const button = document.createElement("button");
+//   div.classList.add("cart__button");
+//   button.innerHTML = `
+//     Añadir al carrito
+//     <img src="./recursos/shopping-cart.png" alt="carrito" />`;
+//   button.addEventListener("click", () => {
+//     carrito.push(el);
+//   });
+//   section.appendChild(div);
+//   contenedor.appendChild(section);
+//   div.appendChild(button);
+// });
+
 //DOM, cambio de cantidad de artículos
 let minusBtn = document.querySelector(".input__minus");
 let plusBtn = document.querySelector(".input__plus");

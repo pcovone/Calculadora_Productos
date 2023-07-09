@@ -444,3 +444,8 @@ header h2 {
   margin-top: 10px;
   font-weight: 700;
 }
+
+#contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+}
