@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="resumen">
+        <h2>Resumen de la compra</h2>
+        <div class="product-list"></div>
+        <div class="total-container">
+          <p id="totalPriceContainer"></p>
+        </div>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <h2>Datos personales</h2>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" required />
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" required />
+        </div>
+        <div class="form-group">
+          <label for="id">ID</label>
+          <input type="text" id="id" required />
+        </div>
+        <div class="form-group">
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" required />
+        </div>
+        <button type="submit" class="btn-comprar">Comprar</button>
+      </form>
+    </div>
+    <script src="./index.js" type="module"></script>
+    <script src="./class.js" type="module"></script>
+  </body>
+</html>
