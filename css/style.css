@@ -349,46 +349,13 @@ main {
   padding: 4px;
 }
 
-/* .input {
+.input {
   height: 57px;
   display: flex;
   justify-content: space-between;
   background-color: white;
   border-radius: 23px;
 }
-
-.input__minus,
-.input__plus {
-  width: 25px;
-  height: 100%;
-}
-
-.input__minus:hover,
-.input__plus:hover {
-  cursor: pointer;
-  opacity: 0.5;
-}
-
-.input__minus {
-  padding: 26px 5px;
-}
-
-.input__plus {
-  padding: 21px 5px;
-}
-
-.input__number {
-  width: 100%;
-  border: none;
-  font-size: 12px;
-  font-weight: 700;
-  text-align: center;
-  outline: none;
-}
-
-.input__number input {
-  outline: none;
-} */
 
 .cart__button {
   display: flex;
@@ -583,4 +550,8 @@ input[type="email"] {
 
 .btn-comprar:hover {
   background-color: #0056b3;
+}
+
+.selected-product img {
+  width: 300px;
 }

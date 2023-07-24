@@ -77,9 +77,9 @@ function agregarAlCarrito(event) {
     text: "Producto agregado",
     duration: 3000,
     close: true,
-    gravity: "top", // `top` or `bottom`
-    position: "right", // `left`, `center` or `right`
-    stopOnFocus: true, // Prevents dismissing of toast on hover
+    gravity: "top",
+    position: "right",
+    stopOnFocus: true,
     style: {
       background: "linear-gradient(to right, #4b33a8, #785ce9)",
       borderRadius: "2rem",
@@ -87,10 +87,10 @@ function agregarAlCarrito(event) {
       fontSize: ".75rem",
     },
     offset: {
-      x: "1.5rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-      y: "1.5rem", // vertical axis - can be a number or a string indicating unity. eg: '2em'
+      x: "1.5rem",
+      y: "1.5rem",
     },
-    onClick: function () {}, // Callback after click
+    onClick: function () {},
   }).showToast();
   const idButton = event.currentTarget.id;
   const addedProduct = arrayProductos.find(
@@ -114,19 +114,16 @@ function agregarAlCarrito(event) {
 
 function actualizarCarrito() {
   if (productContainer) {
-    productContainer.innerHTML = ""; // Limpiar el contenido del carrito
+    productContainer.innerHTML = "";
 
     if (cartProducts.length === 0) {
-      // Si el carrito está vacío
-      emptyCartMessage.style.display = "block"; // Mostrar el mensaje
-      cartModal.classList.remove("show"); // Ocultar el modal del carrito
+      emptyCartMessage.style.display = "block";
+      cartModal.classList.remove("show");
     } else {
-      // Si el carrito tiene productos
-      emptyCartMessage.style.display = "none"; // Ocultar el mensaje
+      emptyCartMessage.style.display = "none";
       let totalPrice = 0;
 
       cartProducts.forEach((product, index) => {
-        // Agregar cada producto al carrito
         const productElement = document.createElement("div");
         productElement.classList.add("cart-modal__details-container");
         productElement.innerHTML = `
@@ -148,10 +145,10 @@ function actualizarCarrito() {
 
       totalPriceContainer.innerText = `Total: $${totalPrice}`;
 
-      cartModal.classList.add("show"); // Mostrar el modal del carrito
+      cartModal.classList.add("show");
     }
 
-    actualizarNotificacionCarrito(); // Actualizar la notificación del carrito
+    actualizarNotificacionCarrito();
 
     const deleteButtons = document.querySelectorAll(".cart-modal__delete");
     deleteButtons.forEach((button) => {
@@ -172,7 +169,6 @@ function vaciarCarrito() {
   actualizarCarrito();
   updateCartNotification();
   guardarProductosEnLocalStorage();
-  // cartProducts = [];
 }
 
 function updateCartNotification() {
@@ -185,10 +181,6 @@ function updateCartNotification() {
 
 function mostrarModal() {
   cartModal.classList.add("show");
-}
-
-function cerrarModal() {
-  cartModal.classList.remove("show");
 }
 
 if (buyButton) {
@@ -222,15 +214,11 @@ cargarProductosDesdeLocalStorage();
 
 function mostrarProductosFormulario() {
   const storedCartProducts = localStorage.getItem("cartProducts");
-  // const storedTotal = localStorage.getItem("cartTotal");
 
   if (storedCartProducts) {
     const cartProducts = JSON.parse(storedCartProducts);
-    // const total = parseFloat(storedTotal);
 
-    // Mostramos los productos seleccionados y el total en el formulario
     mostrarProductosSeleccionados(cartProducts);
-    // mostrarTotal(total);
   }
 }
 
@@ -242,7 +230,7 @@ function mostrarProductosSeleccionados(cartProducts) {
       const productElement = document.createElement("div");
       productElement.classList.add("selected-product");
       productElement.innerHTML = `
-      <img src="${product.url}" alt="${product.nombre}">
+      <img src="${product.url}" alt="${product.nombre} class="image-size">
       <p>${product.nombre} x ${product.cantidad}</p>
       <p>Precio unitario: $${product.precio}</p>
       <p>Total: $${product.precio * product.cantidad}</p>
@@ -252,9 +240,4 @@ function mostrarProductosSeleccionados(cartProducts) {
   }
 }
 
-// function mostrarTotal(total) {
-//   totalContainer.innerHTML = `<p>Total a pagar: $${total.toFixed(2)}</p>`;
-// }
-
-// Llamamos a la función para cargar los productos y el total al cargar la página
 mostrarProductosFormulario();
