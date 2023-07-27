@@ -24,6 +24,11 @@ inputs.forEach((el) => {
 });
 
 function enviarCorreo(formData) {
+  swal(
+    "Gracias por tu compra!",
+    "Te llegará un email con tu número de referencia",
+    "success"
+  );
   const { nombre, correo } = formData;
 
   emailjs
