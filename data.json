@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "nombre": "Viola 16 pulgadas",
+    "precio": 650,
+    "url": "./recursos/viola-16pg.jpg",
+    "categoria": "instrumentos"
+  },
+
+  {
+    "id": 2,
+    "nombre": "Violin 4/4",
+    "precio": 500,
+    "url": "./recursos/violin-4cuartos.jpg",
+    "categoria": "instrumentos"
+  },
+
+  {
+    "id": 3,
+    "nombre": "RockJam Kit de piano de teclado con pantalla táctil",
+    "precio": 300,
+    "url": "./recursos/piano.jpg",
+    "categoria": "instrumentos"
+  },
+
+  {
+    "id": 4,
+    "nombre": "D Z Strad - Viola de 15,5 pulgadas hecha a mano",
+    "precio": 1500,
+    "url": "./recursos/viola-15.5.jpg",
+    "categoria": "instrumentos"
+  },
+
+  {
+    "id": 5,
+    "nombre": "Sabomenia Violin Dreamer D10 hecho a mano",
+    "precio": 299,
+    "url": "./recursos/sabomenia-violin.jpg",
+    "categoria": "instrumentos"
+  },
+
+  {
+    "id": 6,
+    "nombre": "Starument Piano de teclado eléctrico prémium",
+    "precio": 149,
+    "url": "./recursos/stratument-piano.jpg",
+    "categoria": "instrumentos"
+  },
+
+  {
+    "id": 7,
+    "nombre": "D'Addario Kaplan Premium Rosin",
+    "precio": 8,
+    "url": "./recursos/kaplan.jpg",
+    "categoria": "accesorios"
+  },
+
+  {
+    "id": 8,
+    "nombre": "Bernardel Original",
+    "precio": 12,
+    "url": "./recursos/bernardel.jpg",
+    "categoria": "accesorios"
+  }
+]

@@ -13,9 +13,17 @@ const emptyCartMessage = document.querySelector("#emptyCartMessage");
 const totalPriceContainer = document.querySelector("#totalPriceContainer");
 
 const selectedProductsContainer = document.querySelector(".product-list");
-const totalContainer = document.getElementById("totalPriceContainer");
-const purchaseForm = document.getElementById("checkoutForm");
 let cartProducts = [];
+
+const getProducts = async (uploadProducts) => {
+  try {
+    const response = await fetch("data.json");
+    const data = await response.json();
+    uploadProducts(data);
+  } catch (error) {
+    console.error("Error al obtener los productos:", error);
+  }
+};
 
 function uploadProducts(productosElegidos) {
   if (container) {
@@ -48,7 +56,7 @@ function uploadProducts(productosElegidos) {
   }
 }
 
-uploadProducts(arrayProductos);
+getProducts(uploadProducts); // Pasamos uploadProducts como parámetro a getProducts
 
 categoriesBtn.forEach((button) => {
   button.addEventListener("click", (e) => {
