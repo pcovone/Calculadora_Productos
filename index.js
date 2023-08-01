@@ -13,7 +13,7 @@ const emptyCartMessage = document.querySelector("#emptyCartMessage");
 const totalPriceContainer = document.querySelector("#totalPriceContainer");
 
 const selectedProductsContainer = document.querySelector(".product-list");
-let cartProducts = [];
+export let cartProducts = [];
 
 const getProducts = async (uploadProducts) => {
   try {
@@ -56,7 +56,7 @@ function uploadProducts(productosElegidos) {
   }
 }
 
-getProducts(uploadProducts); // Pasamos uploadProducts como parámetro a getProducts
+getProducts(uploadProducts);
 
 categoriesBtn.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -151,7 +151,7 @@ function actualizarCarrito() {
   }
 }
 
-function eliminarProducto(event) {
+export function eliminarProducto(event) {
   const index = event.currentTarget.dataset.index;
   cartProducts.splice(index, 1);
   actualizarCarrito();
@@ -159,13 +159,13 @@ function eliminarProducto(event) {
   guardarProductosEnLocalStorage();
 }
 
-function vaciarCarrito() {
+export function vaciarCarrito() {
   actualizarCarrito();
   updateCartNotification();
-  guardarProductosEnLocalStorage();
+  guardarProductosEnLocalStorage(); 
 }
 
-function updateCartNotification() {
+export function updateCartNotification() {
   if (cartNotification) {
     cartNotification.textContent = cartProducts
       .reduce((total, product) => total + product.cantidad, 0)
@@ -185,7 +185,7 @@ if (buyButton) {
   });
 }
 
-function guardarProductosEnLocalStorage() {
+export function guardarProductosEnLocalStorage() {
   localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
 }
 

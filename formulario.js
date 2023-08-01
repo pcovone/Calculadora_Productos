@@ -1,16 +1,10 @@
+import { vaciarCarrito } from "./index.js";
+
 (function () {
   emailjs.init("OheQdJStKuMccOfYe");
 })();
 
 const formData = {} || JSON.parse(localStorage.getItem("form"));
-
-const datos = {
-  nombre: nombre,
-  apellido: apellido,
-  correo: correo,
-  id: id,
-  direccion: direccion,
-};
 
 const inputs = document.querySelectorAll("input");
 
@@ -49,7 +43,7 @@ function enviarCorreo(formData) {
 
 const buttonMail = document.querySelector("#btn-comprar");
 
-buttonMail.addEventListener("click", (event) => {
+buttonMail.addEventListener("click", async (event) => {
   event.preventDefault();
   console.log("Enviando correo...");
 
@@ -58,5 +52,22 @@ buttonMail.addEventListener("click", (event) => {
     console.error("El campo de correo electrónico está vacío.");
     return;
   }
-  enviarCorreo(formData);
+
+  try {
+    await enviarCorreo(formData);
+
+    swal(
+      "Gracias por tu compra!",
+      "Te llegará un email con tu número de referencia",
+      "success"
+    );
+    vaciarCarrito();
+    localStorage.removeItem("cartProducts");
+
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 2000);
+  } catch (error) {
+    console.error("Error al enviar el correo:", error);
+  }
 });

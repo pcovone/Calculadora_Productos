@@ -439,6 +439,12 @@ main {
   color: #646464;
 }
 
+.cart-modal__delete-img {
+  width: 110px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .cart-modal__delete-img img {
   width: 20px;
   height: 22px;
